@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class GradeCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+    
+        System.out.println("Enter the marks obtained in each subject:");
+        System.out.print("Maths: ");
+        double maths = scanner.nextDouble();
+        System.out.print("Science: ");
+        double science = scanner.nextDouble();
+        System.out.print("English: ");
+        double english = scanner.nextDouble();
+        double totalMarks = maths + science + english;
+        double average = totalMarks / 3;
+        System.out.println("Total Marks: " + totalMarks);
+        System.out.println("Average Marks: " + average);
+        String grade = calculateGrade(average);
+        System.out.println("Grade: " + grade);
+
+        scanner.close();
+    }
+    public static String calculateGrade(double average) {
+        if (average >= 90) {
+            return "A";
+        } else if (average >= 80) {
+            return "B";
+        } else if (average >= 70) {
+            return "C";
+        } else if (average >= 60) {
+            return "D";
+        } else {
+            return "F";
+        }
+    }
